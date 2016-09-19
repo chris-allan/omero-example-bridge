@@ -1,0 +1,35 @@
+plugins {
+    id 'application'
+    id 'eclipse'
+    id 'java'
+}
+
+group = 'com.glencoesoftware'
+version = '0.0.1'
+
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
+repositories {
+    jcenter()
+    mavenCentral()
+    maven {
+        url 'https://artifacts.unidata.ucar.edu/content/repositories/unidata-releases/'
+    }
+    maven {
+        url 'http://artifacts.openmicroscopy.org/artifactory/repo/'
+    }
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'minutes'
+}
+
+dependencies {
+    compile('omero:server:5.3.0-m4-ice35-SNAPSHOT') {
+        exclude group: 'org.springframework.ldap', module: 'spring-ldap'
+        exclude group: 'org.testng', module: 'testng'
+        exclude group: 'hsqldb', module: 'hsqldb'
+    }
+}
+
