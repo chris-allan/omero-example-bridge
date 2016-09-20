@@ -15,7 +15,7 @@ import ome.util.checksum.ChecksumType;
 import org.apache.lucene.document.Document;
 import org.hibernate.search.bridge.LuceneOptions;
 
-public class Bridge extends BridgeHelper {
+public class SimpleBridge extends BridgeHelper {
 
     /* (non-Javadoc)
      * @see ome.services.fulltext.BridgeHelper#set(java.lang.String, java.lang.Object, org.apache.lucene.document.Document, org.hibernate.search.bridge.LuceneOptions)
